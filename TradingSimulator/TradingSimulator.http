@@ -1,0 +1,54 @@
+@TradingSimulator_HostAddress = https://localhost:7150
+
+### Health check
+GET {{TradingSimulator_HostAddress}}/health
+Accept: application/json
+
+### Get all current stock prices
+GET {{TradingSimulator_HostAddress}}/api/stock/current
+Accept: application/json
+
+### Get current price for AAPL
+GET {{TradingSimulator_HostAddress}}/api/stock/AAPL/current
+Accept: application/json
+
+### Get price history for AAPL
+GET {{TradingSimulator_HostAddress}}/api/stock/AAPL/history
+Accept: application/json
+
+### Get current price for MSFT
+GET {{TradingSimulator_HostAddress}}/api/stock/MSFT/current
+Accept: application/json
+
+### Get price history for MSFT
+GET {{TradingSimulator_HostAddress}}/api/stock/MSFT/history
+Accept: application/json
+
+### Get current price for GOOGL
+GET {{TradingSimulator_HostAddress}}/api/stock/GOOGL/current
+Accept: application/json
+
+### Get price history for GOOGL
+GET {{TradingSimulator_HostAddress}}/api/stock/GOOGL/history
+Accept: application/json
+
+### Get current price for TSLA
+GET {{TradingSimulator_HostAddress}}/api/stock/TSLA/current
+Accept: application/json
+
+### Get price history for TSLA
+GET {{TradingSimulator_HostAddress}}/api/stock/TSLA/history
+Accept: application/json
+
+### Get current price for AMZN
+GET {{TradingSimulator_HostAddress}}/api/stock/AMZN/current
+Accept: application/json
+
+### Get price history for AMZN
+GET {{TradingSimulator_HostAddress}}/api/stock/AMZN/history
+Accept: application/json
+
+### Swagger UI (Open in browser)
+# https://localhost:7150/swagger
+
+###
