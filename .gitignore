@@ -1,0 +1,43 @@
+# Build results
+[Dd]ebug/
+[Rr]elease/
+[Bb]in/
+[Oo]bj/
+*.log
+
+# Visual Studio
+.vs/
+*.user
+*.suo
+
+# .NET Core
+project.lock.json
+artifacts/
+
+# Test Results
+[Tt]est[Rr]esult*/
+TestResult.xml
+
+# Coverage
+coverage*.json
+coverage*.xml
+*.coverage
+
+# Publish
+publish/
+*.pubxml
+
+# Cache
+*.[Cc]ache
+
+# Temp files
+*.tmp
+~$*
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE
+.idea/
+.vscode/
