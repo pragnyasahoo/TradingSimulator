@@ -1,0 +1,38 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UserSecretsId>dfb7dc2e-acd0-4811-9da4-e2bcddb1216a</UserSecretsId>
+    <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+    <DockerfileContext>.</DockerfileContext>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <InternalsVisibleTo Include="TradingSimulator.Tests" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.SignalR" Version="1.1.0" />
+    <PackageReference Include="Microsoft.Extensions.Hosting" Version="8.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Logging" Version="8.0.0" />
+    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.22.1" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.6.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\JsonFormatter.Plugin\JsonFormatter.Plugin.csproj" />
+    <ProjectReference Include="..\CsvFormatter.Plugin\CsvFormatter.Plugin.csproj" />
+  </ItemGroup>
+
+  <Target Name="CopyPlugins" AfterTargets="Build">
+    <ItemGroup>
+      <PluginFiles Include="$(OutputPath)JsonFormatter.Plugin.dll" />
+      <PluginFiles Include="$(OutputPath)CsvFormatter.Plugin.dll" />
+    </ItemGroup>
+    <MakeDir Directories="$(OutputPath)plugins" />
+    <Copy SourceFiles="@(PluginFiles)" DestinationFolder="$(OutputPath)plugins" />
+  </Target>
+
+</Project>
